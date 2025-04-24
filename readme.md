@@ -77,7 +77,7 @@ mvn javafx:run
 
 ## 📊 Capturas de Pantalla
 
-(https://imgur.com/f6fNzTf) (https://imgur.com/PBIussH)(https://imgur.com/6rtTGZi)(https://imgur.com/lw53BlF)
+![Screenshot 1](https://i.imgur.com/f6fNzTf.png) ![Screenshot 2](https://i.imgur.com/PBIussH.png) ![Screenshot 3](https://i.imgur.com/6rtTGZi.png) ![Screenshot 4](https://i.imgur.com/lw53BlF.png)
 
 ## 🔄 Flujo de Trabajo
 1. **Login**: Acceso seguro al sistema
