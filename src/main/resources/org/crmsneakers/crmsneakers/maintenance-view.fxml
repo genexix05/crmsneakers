@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.crmsneakers.crmsneakers.controller.MaintenanceController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox>
+            <Text text="Maintenance Management" styleClass="page-title"/>
+            <Text text="Manage sneakers under repair and maintenance" styleClass="page-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+    </HBox>
+    
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Search by brand, model..." HBox.hgrow="ALWAYS"/>
+    </HBox>
+    
+    <TableView fx:id="maintenanceTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="imageColumn" text="Image" prefWidth="100"/>
+            <TableColumn fx:id="brandColumn" text="Brand" prefWidth="120"/>
+            <TableColumn fx:id="modelColumn" text="Model" prefWidth="150"/>
+            <TableColumn fx:id="sizeColumn" text="Size" prefWidth="80"/>
+            <TableColumn fx:id="issueColumn" text="Issue Description" prefWidth="250"/>
+            <TableColumn fx:id="rentalIdColumn" text="Rental ID" prefWidth="150" visible="false"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="totalItemsLabel" text="Total Items: 0"/>
+    </HBox>
+</VBox>

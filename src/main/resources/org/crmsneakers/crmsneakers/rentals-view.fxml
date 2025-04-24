@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.crmsneakers.crmsneakers.controller.RentalsController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox>
+            <Text text="Rental Management" styleClass="page-title"/>
+            <Text text="Manage sneaker rentals and returns" styleClass="page-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="+ Add Rental" onAction="#handleAddRental" styleClass="primary-button" />
+    </HBox>
+    
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Search rentals..." HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="statusFilter" promptText="Status Filter">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="All"/>
+                    <String fx:value="ACTIVE"/>
+                    <String fx:value="COMPLETED"/>
+                    <String fx:value="DAMAGED"/>
+                    <String fx:value="CANCELLED"/>
+                    <String fx:value="UNDER_REPAIR"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+    
+    <TableView fx:id="rentalsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="customerColumn" text="Customer" prefWidth="150"/>
+            <TableColumn fx:id="sneakerColumn" text="Sneaker" prefWidth="150"/>
+            <TableColumn fx:id="startDateColumn" text="Start Date" prefWidth="100"/>
+            <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="100"/>
+            <TableColumn fx:id="priceColumn" text="Price" prefWidth="80"/>
+            <TableColumn fx:id="depositColumn" text="Deposit" prefWidth="80"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="120" reorderable="false">
+                <style>
+                    -fx-alignment: CENTER;
+                </style>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

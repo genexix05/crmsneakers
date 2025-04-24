@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="org.crmsneakers.crmsneakers.controller.CustomersController"
+      spacing="20" style="-fx-padding: 20;">
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox>
+            <Text text="Customer Management" styleClass="page-title"/>
+            <Text text="Manage customer accounts and information" styleClass="page-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="addCustomerButton" text="Add New Customer" styleClass="primary-button"/>
+    </HBox>
+    
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Search customers..." HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="statusFilter" promptText="Status Filter"/>
+        <ComboBox fx:id="membershipFilter" promptText="Membership Filter"/>
+    </HBox>
+    
+    <TableView fx:id="customersTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="120"/>
+            <TableColumn fx:id="membershipColumn" text="Membership" prefWidth="100"/>
+            <TableColumn fx:id="rentalsColumn" text="Rentals" prefWidth="80"/>
+            <TableColumn fx:id="lastActivityColumn" text="Last Activity" prefWidth="150"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="100"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label text="Items per page:"/>
+        <ComboBox fx:id="itemsPerPageComboBox" value="10">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="10"/>
+                    <String fx:value="25"/>
+                    <String fx:value="50"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Pagination fx:id="pagination" pageCount="10" maxPageIndicatorCount="5"/>
+    </HBox>
+</VBox>

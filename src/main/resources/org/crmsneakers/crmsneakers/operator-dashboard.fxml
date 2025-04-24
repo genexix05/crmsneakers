@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.crmsneakers.crmsneakers.controller.OperatorDashboardController"
+            prefHeight="800.0" prefWidth="1200.0"
+            stylesheets="@styles.css">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250">
+            <HBox styleClass="logo-container" alignment="CENTER" spacing="10">
+                <Text text="SneakRent" styleClass="logo-text"/>
+            </HBox>
+            <VBox spacing="10" styleClass="nav-items">
+                <Button text="Dashboard" styleClass="nav-button,active" maxWidth="Infinity" onAction="#showDashboardView"/>
+                <Button text="Inventory" styleClass="nav-button" maxWidth="Infinity" onAction="#showProductsView"/>
+                <Button text="Rentals" styleClass="nav-button" maxWidth="Infinity" onAction="#showRentalsView"/>
+                <Button fx:id="maintenanceButton" text="Maintenance" styleClass="nav-button" maxWidth="Infinity" onAction="#showMaintenance" />
+            </VBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <VBox>
+                    <Text text="Dashboard Overview" styleClass="page-title"/>
+                    <Text fx:id="userLabel" text="Welcome back, Operator" styleClass="welcome-text"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="userButton" styleClass="user-button" onAction="#handleLogout"/>
+            </HBox>
+            
+            <HBox spacing="20">
+                <VBox styleClass="stat-card">
+                    <Text text="Available Sneakers" styleClass="stat-title"/>
+                    <Text fx:id="availableSneakersValue" text="0" styleClass="stat-value"/>
+                    <Text fx:id="availableSneakersChange" text="0% del inventario" styleClass="stat-change,positive"/>
+                </VBox>
+                
+                <VBox styleClass="stat-card">
+                    <Text text="Active Rentals" styleClass="stat-title"/>
+                    <Text fx:id="activeRentalsValue" text="0" styleClass="stat-value"/>
+                    <Text fx:id="activeRentalsChange" text="0 desde ayer" styleClass="stat-change,positive"/>
+                </VBox>
+                
+                <VBox styleClass="stat-card">
+                    <Text text="Pending Returns" styleClass="stat-title"/>
+                    <Text fx:id="pendingReturnsValue" text="0" styleClass="stat-value"/>
+                    <Text fx:id="pendingReturnsChange" text="0 con retraso" styleClass="stat-change,warning"/>
+                </VBox>
+            </HBox>
+            
+            <HBox spacing="20" VBox.vgrow="ALWAYS">
+                <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                    <Text text="Recent Activities" styleClass="section-title"/>
+                    <TableView fx:id="recentActivitiesTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn text="Activity" prefWidth="200"/>
+                            <TableColumn text="Customer" prefWidth="150"/>
+                            <TableColumn text="Date" prefWidth="150"/>
+                            <TableColumn text="Status" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </HBox>
+            
+            <VBox styleClass="table-container">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Text text="Pending Tasks" styleClass="section-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="View All" styleClass="view-all-button"/>
+                </HBox>
+                <TableView fx:id="pendingTasksTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="Task" prefWidth="200"/>
+                        <TableColumn text="Priority" prefWidth="100"/>
+                        <TableColumn text="Due Date" prefWidth="150"/>
+                        <TableColumn text="Status" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

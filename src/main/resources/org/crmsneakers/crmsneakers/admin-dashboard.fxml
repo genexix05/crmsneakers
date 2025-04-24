@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.crmsneakers.crmsneakers.controller.AdminDashboardController"
+            prefHeight="800.0" prefWidth="1200.0"
+            stylesheets="@styles.css">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250">
+            <HBox styleClass="logo-container" alignment="CENTER" spacing="10">
+                <Text text="SneakRent" styleClass="logo-text"/>
+            </HBox>
+            <VBox spacing="10" styleClass="nav-items">
+                <Button text="Dashboard" styleClass="nav-button,active" maxWidth="Infinity" onAction="#showDashboardView"/>
+                <Button text="Users" styleClass="nav-button" maxWidth="Infinity" onAction="#showUsersView"/>
+                <Button text="Customers" styleClass="nav-button" maxWidth="Infinity" onAction="#showCustomersView"/>
+                <Button text="Inventory" styleClass="nav-button" maxWidth="Infinity" onAction="#showProductsView"/>
+                <Button text="Rentals" styleClass="nav-button" maxWidth="Infinity" onAction="#showRentalsView"/>
+                <Button fx:id="maintenanceButton" text="Maintenance" styleClass="nav-button" maxWidth="Infinity" onAction="#showMaintenance"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <StackPane fx:id="contentArea">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <VBox>
+                        <Text text="Dashboard Overview" styleClass="page-title"/>
+                        <Label fx:id="userLabel" text="Welcome back, Admin" styleClass="welcome-text"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Logout" styleClass="nav-button" onAction="#handleLogout"/>
+                </HBox>
+                
+                <HBox spacing="20">
+                    <VBox styleClass="stat-card">
+                        <Text text="Available Sneakers" styleClass="stat-title"/>
+                        <Text fx:id="availableSneakersValue" text="0" styleClass="stat-value"/>
+                        <Text fx:id="availableSneakersChange" text="0% del total" styleClass="stat-change"/>
+                    </VBox>
+                    
+                    <VBox styleClass="stat-card">
+                        <Text text="Active Rentals" styleClass="stat-title"/>
+                        <Text fx:id="activeRentalsValue" text="0" styleClass="stat-value"/>
+                        <Text fx:id="activeRentalsChange" text="0 desde ayer" styleClass="stat-change"/>
+                    </VBox>
+                    
+                    
+                    <VBox styleClass="stat-card">
+                        <Text text="Monthly Revenue" styleClass="stat-title"/>
+                        <Text fx:id="monthlyRevenueValue" text="\$0" styleClass="stat-value"/>
+                        <Text fx:id="monthlyRevenueChange" text="0% este mes" styleClass="stat-change"/>
+                    </VBox>
+                </HBox> 
+                
+                <HBox spacing="20" VBox.vgrow="ALWAYS">
+                    <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                        <Text text="Revenue Trend" styleClass="section-title"/>
+                        <LineChart fx:id="revenueChart" prefHeight="300">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </VBox>
+                    
+                </HBox>
+                
+                <HBox spacing="20">
+                    <VBox styleClass="table-container" HBox.hgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Text text="Recent Rentals" styleClass="section-title"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="View All" styleClass="view-all-button" onAction="#showRentalsView"/>
+                        </HBox>
+                        <TableView fx:id="recentRentalsTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="rentalCustomerColumn" text="Customer" prefWidth="150"/>
+                                <TableColumn fx:id="rentalProductColumn" text="Product" prefWidth="150"/>
+                                <TableColumn fx:id="rentalStartDateColumn" text="Start Date" prefWidth="100"/>
+                                <TableColumn fx:id="rentalEndDateColumn" text="End Date" prefWidth="100"/>
+                                <TableColumn fx:id="rentalStatusColumn" text="Status" prefWidth="100"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                    
+                    <VBox styleClass="table-container" HBox.hgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Text text="Inventory Alerts" styleClass="section-title"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="View All" styleClass="view-all-button" onAction="#showProductsView"/>
+                        </HBox>
+                        <TableView fx:id="inventoryAlertsTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="alertProductColumn" text="Product" prefWidth="150"/>
+                                <TableColumn fx:id="alertStatusColumn" text="Status" prefWidth="100"/>
+                                <TableColumn fx:id="alertConditionColumn" text="Condition" prefWidth="100"/>
+                                <TableColumn fx:id="alertActionColumn" text="Action Required" prefWidth="150"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

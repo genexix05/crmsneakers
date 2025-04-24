@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.crmsneakers.crmsneakers.controller.LoginController"
+      prefHeight="600.0" prefWidth="800.0"
+      stylesheets="@styles.css">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <VBox spacing="15.0" alignment="CENTER" maxWidth="450.0" styleClass="login-container">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+        </padding>
+        
+        <HBox alignment="CENTER" spacing="10">
+            <Text text="SneakRent" styleClass="logo-text"/>
+        </HBox>
+        
+        <Label text="Bienvenido a CRM Sneakers" textAlignment="CENTER" styleClass="page-title">
+            <font>
+                <Font size="22.0" name="System Bold" />
+            </font>
+        </Label>
+        
+        <Text text="Inicia sesión para continuar" styleClass="page-subtitle"/>
+
+        <GridPane alignment="CENTER" hgap="15" vgap="15">
+            <Label text="Usuario:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="Introduce tu nombre de usuario"/>
+
+            <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Introduce tu contraseña"/>
+        </GridPane>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Button onAction="#handleLogin" text="Iniciar Sesión" defaultButton="true" styleClass="primary-button"/>
+            <Button onAction="#handleRegisterNavigation" text="Registrarse" styleClass="secondary-button"/>
+        </HBox>
+        
+        <Label fx:id="messageLabel" style="-fx-text-fill: #f44336;"/>
+    </VBox>
+</VBox>

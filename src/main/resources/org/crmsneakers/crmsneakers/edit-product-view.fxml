@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Fila 0: Nombre del Producto -->
+    <Label text="Product Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="productNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <!-- Fila 1: Marca -->
+    <Label text="Brand:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="brandField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <!-- Fila 2: Modelo -->
+    <Label text="Model:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="modelField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <!-- Fila 3: Talla -->
+    <Label text="Size:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="sizeField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <!-- Fila 4: Precio -->
+    <Label text="Price:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="priceField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <!-- Fila 5: Stock (si se maneja) -->
+    <Label text="Stock:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="stockField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <!-- Fila 6: URL de la Imagen -->
+    <Label text="Image URL:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="imageUrlField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <!-- Fila 7: Subida de Imagen -->
+    <Label text="Image:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <HBox spacing="10" GridPane.rowIndex="7" GridPane.columnIndex="1">
+        <Button fx:id="uploadButton" text="Choose Image"/>
+        <Label fx:id="imageLabel" text=""/>
+    </HBox>
+
+    <!-- Fila 8: Botones de Guardar y Cancelar -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.rowIndex="8" GridPane.columnIndex="1">
+        <Button fx:id="saveButton" text="Save"/>
+        <Button fx:id="cancelButton" text="Cancel"/>
+    </HBox>
+</GridPane>

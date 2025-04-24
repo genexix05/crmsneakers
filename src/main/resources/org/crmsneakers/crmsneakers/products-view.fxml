@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.crmsneakers.crmsneakers.controller.ProductsController"
+      prefHeight="800.0" prefWidth="1200.0"
+      styleClass="inventory-container"
+      stylesheets="@styles.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox>
+            <Text fx:id="pageTitle" text="Sneaker Inventory" styleClass="page-title"/>
+            <Text fx:id="pageSubtitle" text="Browse and rent your favorite sneakers" styleClass="page-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="addProductButton" text="+ Add Sneaker" styleClass="primary-button" onAction="#showAddProductDialog" managed="${controller.adminOrOperator}" visible="${controller.adminOrOperator}"/>
+    </HBox>
+    
+    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="filter-container">
+        <ComboBox fx:id="brandFilterComboBox" promptText="All Brands" styleClass="filter-combo">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="All"/>
+                    <String fx:value="Nike"/>
+                    <String fx:value="Adidas"/>
+                    <String fx:value="Jordan"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        
+        <ComboBox fx:id="sizeFilterComboBox" promptText="All Sizes" styleClass="filter-combo">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="All"/>
+                    <String fx:value="US 8"/>
+                    <String fx:value="US 9"/>
+                    <String fx:value="US 10"/>
+                    <String fx:value="US 11"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        
+        <ComboBox fx:id="statusFilterComboBox" promptText="All Conditions" styleClass="filter-combo" onAction="#filterProducts">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="All"/>
+                    <String fx:value="ACTIVE"/>
+                    <String fx:value="RENTED"/>
+                    <String fx:value="UNDER_REPAIR"/>
+                    <String fx:value="INACTIVE"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <HBox styleClass="search-container" alignment="CENTER_LEFT">
+            <TextField fx:id="searchField" promptText="Search sneakers..." styleClass="search-field"/>
+            <Button styleClass="search-button" onAction="#searchProducts"/>
+        </HBox>
+    </HBox>
+    
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="sneaker-grid-container">
+        <FlowPane fx:id="sneakerGrid" hgap="20" vgap="20">
+            <!-- Las tarjetas de zapatillas se añadirán programáticamente -->
+        </FlowPane>
+    </ScrollPane>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="totalItemsLabel" text="Total Items: 0" styleClass="total-items-label"/>
+    </HBox>
+</VBox>

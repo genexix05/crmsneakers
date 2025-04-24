@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.crmsneakers.crmsneakers.controller.UsersController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox>
+            <Text text="User Management" styleClass="page-title"/>
+            <Text text="Manage system users and their roles" styleClass="page-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="addUserButton" text="Add New User" styleClass="primary-button" onAction="#showAddUserDialog"/>
+    </HBox>
+    
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Search users..." HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="roleFilter" promptText="Role Filter"/>
+    </HBox>
+    
+    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="150"/>
+            <TableColumn fx:id="roleColumn" text="Role" prefWidth="100"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="totalItemsLabel" text="Total Users: 0"/>
+    </HBox>
+</VBox>

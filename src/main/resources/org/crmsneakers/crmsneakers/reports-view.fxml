@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="20" style="-fx-padding: 20;">
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox>
+            <Text text="Reports & Analytics" styleClass="page-title"/>
+            <Text text="View business performance and insights" styleClass="page-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ComboBox promptText="Time Period" value="Last 30 Days"/>
+        <Button text="Export Data" styleClass="primary-button"/>
+    </HBox>
+    
+    <HBox spacing="20">
+        <VBox styleClass="stat-card">
+            <Text text="Total Revenue" styleClass="stat-title"/>
+            <Text text="$24,680" styleClass="stat-value"/>
+            <Text text="↑ 12% from last month" styleClass="stat-change positive"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card">
+            <Text text="Total Rentals" styleClass="stat-title"/>
+            <Text text="342" styleClass="stat-value"/>
+            <Text text="↑ 8% from last month" styleClass="stat-change positive"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card">
+            <Text text="New Customers" styleClass="stat-title"/>
+            <Text text="56" styleClass="stat-value"/>
+            <Text text="↓ 3% from last month" styleClass="stat-change negative"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card">
+            <Text text="Avg. Rental Duration" styleClass="stat-title"/>
+            <Text text="4.2 days" styleClass="stat-value"/>
+            <Text text="↑ 0.5 days from last month" styleClass="stat-change positive"/>
+        </VBox>
+    </HBox>
+    
+    <TabPane VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="Revenue">
+                <content>
+                    <VBox spacing="10">
+                        <LineChart>
+                            <xAxis><CategoryAxis label="Date"/></xAxis>
+                            <yAxis><NumberAxis label="Revenue ($)"/></yAxis>
+                        </LineChart>
+                    </VBox>
+                </content>
+            </Tab>
+            <Tab text="Rentals">
+                <content>
+                    <VBox spacing="10">
+                        <BarChart>
+                            <xAxis><CategoryAxis label="Sneaker Model"/></xAxis>
+                            <yAxis><NumberAxis label="Number of Rentals"/></yAxis>
+                        </BarChart>
+                    </VBox>
+                </content>
+            </Tab>
+            <Tab text="Customer Demographics">
+                <content>
+                    <HBox spacing="20">
+                        <PieChart title="Customer Age Groups" legendVisible="true"/>
+                        <PieChart title="Customer Locations" legendVisible="true"/>
+                    </HBox>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

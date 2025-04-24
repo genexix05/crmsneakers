@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.crmsneakers.crmsneakers.controller.CustomerDashboardController"
+            prefHeight="800.0" prefWidth="1200.0"
+            stylesheets="@styles.css">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250">
+            <HBox styleClass="logo-container" alignment="CENTER" spacing="10">
+                <Text text="SneakRent" styleClass="logo-text"/>
+            </HBox>
+            <VBox spacing="10" styleClass="nav-items">
+                <Button text="Dashboard" styleClass="nav-button" maxWidth="Infinity" onAction="#showDashboardView"/>
+                <Button text="Sneakers" styleClass="nav-button" maxWidth="Infinity" onAction="#showProductsView"/>
+                <Button text="My Rentals" styleClass="nav-button" maxWidth="Infinity" onAction="#showMyRentalsView"/>
+                <Region VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <StackPane fx:id="contentArea">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <VBox>
+                        <Text text="Dashboard Overview" styleClass="page-title"/>
+                        <Label fx:id="userLabel" text="Welcome back, Alex Morgan" styleClass="welcome-text"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Logout" styleClass="nav-button" onAction="#handleLogout"/>
+                </HBox>
+                
+                <HBox spacing="20">
+                    <!-- Available Sneakers Card -->
+                    <VBox styleClass="stat-card">
+                        <Text text="Available Sneakers" styleClass="stat-title"/>
+                        <Text fx:id="availableSneakersCount" text="246" styleClass="stat-value"/>
+                        <Text fx:id="availableSneakersChange" text="↑ 12 from last week" styleClass="stat-change,positive"/>
+                    </VBox>
+                    
+                    <!-- My Active Rentals Card -->
+                    <VBox styleClass="stat-card">
+                        <Text text="My Active Rentals" styleClass="stat-title"/>
+                        <Text fx:id="activeRentalsCount" text="2" styleClass="stat-value"/>
+                        <Text fx:id="activeRentalsInfo" text="1 due in 3 days" styleClass="stat-change,warning"/>
+                    </VBox>
+                    
+                    <!-- Rental History Card -->
+                    <VBox styleClass="stat-card">
+                        <Text text="Rental History" styleClass="stat-title"/>
+                        <Text fx:id="rentalHistoryCount" text="8" styleClass="stat-value"/>
+                        <Text fx:id="rentalHistoryChange" text="Last month: 3" styleClass="stat-change"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox spacing="20" VBox.vgrow="ALWAYS">
+                    <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                        <Text text="Popular Sneakers" styleClass="section-title"/>
+                        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll-pane">
+                            <FlowPane fx:id="popularSneakersPane" hgap="20" vgap="20"/>
+                        </ScrollPane>
+                    </VBox>
+                </HBox>
+                
+                <VBox styleClass="table-container">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Text text="My Recent Rentals" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="View All" styleClass="view-all-button" onAction="#showMyRentalsView"/>
+                    </HBox>
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll-pane">
+                        <FlowPane fx:id="recentRentalsPane" hgap="20" vgap="20"/>
+                    </ScrollPane>
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

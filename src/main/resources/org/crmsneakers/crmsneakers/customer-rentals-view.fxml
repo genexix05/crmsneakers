@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.crmsneakers.crmsneakers.controller.CustomerRentalsController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Button text="Back to Dashboard" fx:id="dashboardButton" onAction="#backToDashboard"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="My Rentals" style="-fx-font-size: 24px;"/>
+    </HBox>
+    
+    <TableView fx:id="rentalsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="productColumn" text="Product" prefWidth="200"/>
+            <TableColumn fx:id="startDateColumn" text="Start Date" prefWidth="150"/>
+            <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="150"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

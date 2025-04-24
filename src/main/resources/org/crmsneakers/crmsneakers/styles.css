@@ -1,0 +1,508 @@
+/* Main Application Styles */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f5f7fa;
+}
+
+/* Inventory Container Styles */
+.inventory-container {
+    -fx-background-color: #f5f7fa;
+}
+
+/* Filter Container Styles */
+.filter-container {
+    -fx-padding: 20px 0;
+}
+
+.filter-combo {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+    -fx-min-width: 150px;
+}
+
+.search-container {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-padding: 4px 8px;
+}
+
+.search-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 4px;
+    -fx-min-width: 250px;
+}
+
+.search-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url('search-icon.png');
+    -fx-background-size: 16px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-min-width: 24px;
+    -fx-min-height: 24px;
+}
+
+/* Sneaker Grid Styles */
+.sneaker-grid-container {
+    -fx-background-color: transparent;
+    -fx-padding: 20px 0;
+    -fx-fit-to-width: true;
+}
+
+.sneaker-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+    -fx-min-width: 280px;
+    -fx-max-width: 280px;
+    -fx-min-height: 380px;
+    -fx-max-height: 380px;
+    -fx-padding: 16px;
+}
+
+.sneaker-image {
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-min-height: 200px;
+    -fx-background-radius: 4px;
+}
+
+.sneaker-brand {
+    -fx-font-size: 14px;
+    -fx-text-fill: #78909c;
+}
+
+.sneaker-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #263238;
+}
+
+.sneaker-size {
+    -fx-font-size: 14px;
+    -fx-text-fill: #78909c;
+}
+
+.sneaker-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a237e;
+}
+
+.status-badge {
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+
+.status-badge.available {
+    -fx-background-color: #4caf50;
+}
+
+.status-badge.maintenance {
+    -fx-background-color: #ff9800;
+}
+
+.status-badge.rented {
+    -fx-background-color: #9c27b0;
+}
+
+.primary-button {
+    -fx-background-color: #1a237e;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 4px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #303f9f;
+}
+
+.total-items-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #78909c;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    -fx-background-color: #1a237e;
+    -fx-padding: 20px 0;
+}
+
+.logo-container {
+    -fx-padding: 10px 20px 30px 20px;
+}
+
+.logo-text {
+    -fx-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.nav-items {
+    -fx-padding: 10px 15px;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b0bec5;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 15px;
+    -fx-alignment: center-left;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #303f9f;
+    -fx-text-fill: white;
+}
+
+.nav-button.active {
+    -fx-background-color: #3949ab;
+    -fx-text-fill: white;
+}
+
+/* Header Styles */
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #263238;
+}
+
+.welcome-text {
+    -fx-font-size: 14px;
+    -fx-fill: #78909c;
+}
+
+.user-button {
+    -fx-background-color: #e8eaf6;
+    -fx-background-radius: 50%;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+}
+
+/* Stat Card Styles */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+    -fx-pref-width: 250px;
+}
+
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-fill: #78909c;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-fill: #263238;
+    -fx-padding: 5px 0;
+}
+
+.stat-change {
+    -fx-font-size: 12px;
+}
+
+.stat-change.positive {
+    -fx-fill: #4caf50;
+}
+
+.stat-change.negative {
+    -fx-fill: #f44336;
+}
+
+.stat-change.warning {
+    -fx-fill: #ff9800;
+}
+
+/* Chart Container Styles */
+.chart-container {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-fill: #263238;
+    -fx-padding: 0 0 10px 0;
+}
+
+/* Table Container Styles */
+.table-container {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+.view-all-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3949ab;
+    -fx-border-color: transparent;
+}
+
+/* Chart Styles */
+.chart {
+    -fx-padding: 10px;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #eee;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #eee;
+}
+
+.chart-series-line {
+    -fx-stroke: #3949ab;
+    -fx-stroke-width: 2px;
+}
+
+/* Table Styles */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e0e0e0 transparent;
+    -fx-padding: 5px 10px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #78909c;
+    -fx-font-weight: normal;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #f5f5f5 transparent;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f5f7fa;
+}
+
+/* Action Button Styles */
+.action-button {
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.finish-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.finish-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.repair-button {
+    -fx-background-color: #ff9800;
+    -fx-text-fill: white;
+}
+
+.repair-button:hover {
+    -fx-background-color: #f57c00;
+}
+
+.complete-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.complete-button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.return-button {
+    -fx-background-color: #607D8B;
+    -fx-text-fill: white;
+}
+
+.return-button:hover {
+    -fx-background-color: #455A64;
+}
+
+.danger-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c82333;
+}
+
+.danger-button:pressed {
+    -fx-background-color: #bd2130;
+}
+
+/* Rental Actions Button Styles */
+.table-cell .button {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+    -fx-padding: 5px 15px;
+    -fx-background-radius: 4px;
+    -fx-font-size: 12px;
+    -fx-min-width: 80px;
+    -fx-cursor: hand;
+}
+
+.table-cell .button:hover {
+    -fx-background-color: #1565C0;
+}
+
+/* Context Menu Styles */
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 4px;
+    -fx-padding: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.menu-item {
+    -fx-padding: 8px 15px;
+    -fx-cursor: hand;
+}
+
+.menu-item:hover {
+    -fx-background-color: #F5F5F5;
+}
+
+.menu-item:focused {
+    -fx-background-color: #E3F2FD;
+}
+
+.menu-item .label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #424242;
+}
+
+/* Table Row Styles */
+.table-row-cell:selected {
+    -fx-background-color: #E3F2FD;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #212121;
+}
+
+/* Estilos específicos para los botones de la vista de mantenimiento */
+.action-button {
+    -fx-padding: 5px 10px;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 100px;
+}
+
+.action-button.complete-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.action-button.complete-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.action-button.details-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.action-button.details-button:hover {
+    -fx-background-color: #0b7dda;
+}
+
+/* Estilos para la tabla de mantenimiento */
+.maintenance-item {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-padding: 10px;
+}
+
+.edit-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.edit-button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.edit-button:pressed {
+    -fx-background-color: #1565C0;
+}
+
+/* Dashboard Card Styles */
+.sneaker-card, .rental-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+    -fx-min-width: 220px;
+    -fx-max-width: 220px;
+    -fx-padding: 15px;
+    -fx-spacing: 10;
+}
+
+.rental-dates {
+    -fx-font-size: 13px;
+    -fx-text-fill: #78909c;
+}
+
+.rental-status {
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-background-color: #1976D2;
+}
+
+.sneaker-details {
+    -fx-font-size: 13px;
+    -fx-text-fill: #78909c;
+}
+
+.transparent-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.transparent-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .scroll-bar:vertical,
+.transparent-scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
