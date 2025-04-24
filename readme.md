@@ -7,8 +7,6 @@
 ## Descripción
 CRM Sneakers es una aplicación de gestión especializada para tiendas de zapatillas deportivas, desarrollada como proyecto académico para el 2º curso de Desarrollo de Aplicaciones Multiplataforma (DAM). Esta solución integral permite administrar todos los aspectos del negocio, desde el inventario hasta las relaciones con los clientes.
 
-![Logo CRM Sneakers](https://via.placeholder.com/150)
-
 ## 🚀 Características Principales
 
 ### 👟 Gestión de Inventario
